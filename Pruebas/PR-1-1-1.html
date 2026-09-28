@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR-1-1-1 Álvaro Calderón</title>
+    <style>
+        body{
+            margin: 20px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        table{
+            width: 100%;
+            table-layout: fixed;
+            margin-bottom: 30px;
+            border-spacing: 0;
+            & caption {
+                text-align: left;
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
+            & td{
+                text-align: center; 
+                height: 56px; 
+                border: 2px solid white; 
+            }
+        }
+        
+        /* Colores Primarios */
+        table:nth-of-type(1){
+            & td:nth-child(1){background: #FF0000;}
+            & td:nth-child(2){background: #00FF00;}
+            & td:nth-child(3){background: #0000FF; color: white;}
+        }
+
+        /* Colores Secundarios */
+        table:nth-of-type(2){
+            & td:nth-child(1){background: #FFFF00;}
+            & td:nth-child(2){background: #FF0000;}
+            & td:nth-child(3){background: #FF00FF;}
+            & td:nth-child(4){background: #0000FF; color: white;}
+            & td:nth-child(5){background: #00FFFF;}
+            & td:nth-child(6){background: #00FF00;}
+        }
+
+        /* Colores más claros*/
+        table:nth-of-type(3){
+            & tr:nth-child(1) td:nth-child(1){background: #FFFF80;}
+            & tr:nth-child(1) td:nth-child(2){background: #FF8080;}
+            & tr:nth-child(1) td:nth-child(3){background: #FF80FF;}
+            & tr:nth-child(1) td:nth-child(4){background: #8080FF;}
+            & tr:nth-child(1) td:nth-child(5){background: #80FFFF;}
+            & tr:nth-child(1) td:nth-child(6){background: #80FF80;}
+
+            & tr:nth-child(2) td:nth-child(1){background: #FFFFC0;}
+            & tr:nth-child(2) td:nth-child(2){background: #FFC0C0;}
+            & tr:nth-child(2) td:nth-child(3){background: #FFC0FF;}
+            & tr:nth-child(2) td:nth-child(4){background: #C0C0FF;}
+            & tr:nth-child(2) td:nth-child(5){background: #C0FFFF;}
+            & tr:nth-child(2) td:nth-child(6){background: #C0FFC0;}
+        }
+
+        /* Colores más oscuros*/
+        table:nth-of-type(4){
+            & td {color: white;}
+            
+            & tr:nth-child(1) td:nth-child(1){background: #C0C000;}
+            & tr:nth-child(1) td:nth-child(2){background: #C00000;}
+            & tr:nth-child(1) td:nth-child(3){background: #C000C0;}
+            & tr:nth-child(1) td:nth-child(4){background: #0000C0;}
+            & tr:nth-child(1) td:nth-child(5){background: #00C0C0;}
+            & tr:nth-child(1) td:nth-child(6){background: #00C000;}
+
+            & tr:nth-child(2) td:nth-child(1){background: #808000;}
+            & tr:nth-child(2) td:nth-child(2){background: #800000;}
+            & tr:nth-child(2) td:nth-child(3){background: #800080;}
+            & tr:nth-child(2) td:nth-child(4){background: #000080;}
+            & tr:nth-child(2) td:nth-child(5){background: #008080;}
+            & tr:nth-child(2) td:nth-child(6){background: #008000;}
+        }
+        
+    </style>
+</head>
+<body>
+
+    <table>
+        <caption>Colores Primarios</caption>
+        <tr>
+            <td>#FF0000</td>
+            <td>#00FF00</td>
+            <td>#0000FF</td>
+        </tr>
+    </table>
+    
+    <table>
+        <caption>Colores Secundarios</caption>
+        <tr>
+            <td>#FFFF00</td>
+            <td>#FF0000</td>
+            <td>#FF00FF</td>
+            <td>#0000FF</td>
+            <td>#00FFFF</td>
+            <td>#00FF00</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>Para hacer los colores mas claros Suma en hexadecimal</caption>
+        <tr>
+            <td>#FFFF80</td>
+            <td>#FF8080</td>
+            <td>#FF80FF</td>
+            <td>#8080FF</td>
+            <td>#80FFFF</td>
+            <td>#80FF80</td>
+        </tr>
+        <tr>
+            <td>#FFFFC0</td>
+            <td>#FFC0C0</td>
+            <td>#FFC0FF</td>
+            <td>#C0C0FF</td>
+            <td>#C0FFFF</td>
+            <td>#C0FFC0</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>Para hacer los colores mas oscuros Resta en hexadecimal</caption>
+        <tr>
+            <td>#C0C000</td>
+            <td>#C00000</td>
+            <td>#C000C0</td>
+            <td>#0000C0</td>
+            <td>#00C0C0</td>
+            <td>#00C000</td>
+        </tr>
+        <tr>
+            <td>#808000</td>
+            <td>#800000</td>
+            <td>#800080</td>
+            <td>#000080</td>
+            <td>#008080</td>
+            <td>#008000</td>
+        </tr>
+    </table>
+
+</body>
+</html>
