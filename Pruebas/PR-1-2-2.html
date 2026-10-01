@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR-1-2-2 Álvaro Calderón</title>
+    <style>
+        body{margin: 5px;}
+        *{
+            box-sizing: border-box;
+        }
+        h2{
+            text-align: center;
+        }
+        table{
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            & tr td{width: 100%;
+                text-align: center;
+            border: 1px solid #a092ff;}
+        }
+    </style>
+</head>
+<body>
+    <h2>Tablas con table</h2>
+   <table>
+        <tr>
+            <td colspan="2">1</td>
+            <td colspan="2">1</td>
+            <td colspan="4">1</td>
+        </tr>
+        <tr>
+            <td colspan="4">2</td>
+            <td colspan="4">2</td>
+        </tr>
+        <tr>
+            <td colspan="3">3</td>
+            <td colspan="4">3</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>4</td>
+            <td colspan="2">4</td>
+            <td colspan="3">4</td>
+            <td>4</td>
+        </tr>
+    </table>
+     <h2>Tablas con div</h2>
+    <div class="table">
+        <div class="row">
+            <div class="td">1</div>
+            <div class="td">11</div>
+            <div class="td">111</div>
+            <div class="td">1111</div>
+        </div>
+        <div class="row">
+            <td>2</td>
+            <td>222222</td>
+            <td>2222222222</td>
+        </div>
+        <div class="row">
+            <div class="td">3</div>
+            <div class="td">33</div>
+            <div class="td">333</div>
+            <div class="td">3333</div>
+            <div class="td">33333</div>
+            <div class="td">33333</div>
+            <div class="td">3333</div>
+            <div class="td">333</div>
+            <div class="td">33</div>
+            <div class="td">3</div>
+        </div>
+        <div class="row">
+            <td>4.1</td>
+            <td>4.2</td>
+            <td>4.3</td>
+            <td>4.4</td>
+            <td>4.5</td>
+        </div>
+         <div class="row">
+            <td>5.1</td>
+            <td>5.2</td>
+            <td>5.3</td>
+            <td>5.4</td>
+            <td>5.5</td>
+        </div>
+ 
+    </div>
+</body>
+</html>
