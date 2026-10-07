@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR-2-1 Álvaro Calderón</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 5px;
+        }
+
+        .container {
+            width: 100%;
+            min-width: 570px;
+        }
+        body > .container > header {
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            height: 84px;
+            background-color: #a6a6a6;
+        }
+
+        body > .container > header > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 84px;
+        }
+
+        body > .container > header img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        body > .container > header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #000;
+        }
+        .wrap {
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            align-items: stretch;
+            height: 550px;
+        }
+
+        aside {
+            background-color: #ff0033;
+            min-height: 358px;
+        }
+        aside nav {
+            background-color: #ddd;
+            margin: 0;
+        }
+        aside nav ul {
+            margin: 0;
+            padding: 3px 0 3px 20px;
+        }
+        aside nav a {
+            color: #551a8b;
+        }
+        main {
+            background-color: #ccc;
+            min-height: 358px;
+        }
+        main article {
+            margin: 0;
+            padding: 0;
+        }
+        main article header {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+        }
+        main article h2 {
+            margin: 0;
+            font-size: 22px;
+            line-height: 25px;
+        }
+        main article h3 {
+            margin: 0;
+            font-size: 18px;
+            line-height: 20px;
+        }
+        main article p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 19px;
+        }
+        .comentarios {
+            text-align: center;
+            margin: 4px 0 5px;
+        }
+        .aside-derecho p {
+            margin: 0;
+            padding: 3px 5px;
+            background-color: #ccc;
+            border: 2px solid #ff0033;
+            font-size: 16px;
+            line-height: 19px;
+        }
+        footer {
+            height: 54px;
+            background-color: #555;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer label {
+            display: inline-block;
+            margin-top: 1px;
+        }
+
+        footer progress {
+            vertical-align: middle;
+            width: 125px;
+            height: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <div>
+                <img src="https://picsum.photos/id/100/100" alt="imagen aleatoria">
+            </div>
+
+            <div>
+                <h1>CABECERA</h1>
+            </div>
+
+            <div>
+                <img src="https://picsum.photos/id/101/100" alt="imagen aleatoria">
+            </div>
+        </header>
+
+        <div class="wrap">
+
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Opciones</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main>
+                <article>
+                    <header>
+                        <h2>Mi primer articulo</h2>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, similique.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, sed?</p>
+                </article>
+
+                <article>
+                    <header>
+                        <h2>Mi segundo articulo</h2>
+                        <h3>Subtitulo 2 articulo</h3>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet consequuntur quisquam vero non eaque at sunt reprehenderit quas.</p>
+                    <p class="comentarios">comentarios</p>
+                </article>
+
+                <article>
+                    <header>
+                        <h2>Mi tercer articulo</h2>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, asperiores.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam error adipisci architecto consectetur eaque doloremque eum voluptate ex magni? Nobis illum ex doloribus ab provident laborum, voluptas assumenda sit repellat?</p>
+                    <p class="comentarios">comentarios</p>
+                </article>
+            </main>
+
+            <aside class="aside-derecho">
+                <p>
+                    Aqui tenemos nuestra<br>
+                    seccion de links<br>
+                    interesantes<br>
+                    Elemento: details<br>
+                    ▶ Lista datos summary
+                </p>
+            </aside>
+
+        </div>
+
+        <footer>
+            <p>©Todos los derechos reservados.</p>
+            <label for="progreso">Progress: </label>
+            <progress id="progreso" value="25" max="100">25%</progress>
+        </footer>
+
+    </div>
+</body>
+</html>
