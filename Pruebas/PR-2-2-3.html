@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PR-2-2-3 Álvaro Calderón</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      nav a {
+        display: inline-block;
+        padding: 5px 15px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      nav a[href="#uno"] {
+        background-color: deeppink;
+      }
+      nav a[href="#dos"] {
+        background-color: rosybrown;
+      }
+      nav a[href="#tres"] {
+        background-color: coral;
+      }
+      article {
+        padding: 20px;
+        margin-top: 15px;
+        color: white;
+      }
+      #uno {
+        background-color: gray;
+      }
+      #dos {
+        background-color: darkorange;
+        color: black;
+      }
+      #tres {
+        background-color: darkturquoise;
+        color: black;
+      }
+      .volver {
+        display: inline-block;
+        background-color: green;
+        color: white;
+        padding: 5px 15px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 3px;
+        margin-top: 15px;
+      }
+      article:target {
+        color: yellow;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#uno">Primero</a>
+      <a href="#dos">Segundo</a>
+      <a href="#tres">Tercero</a>
+    </nav>
+
+    <article id="uno">
+      <h2>Articulo UNO</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus,
+        laudantium molestias suscipit doloribus autem, harum magni expedita sint
+        tempore quaerat rerum. Omnis voluptas eum corrupti ipsam magnam. Alias,
+        quia aspernatur!
+      </p>
+      <a href="#" class="volver">Volver</a>
+    </article>
+
+    <article id="dos">
+      <h2>Articulo DOS</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus,
+        laudantium molestias suscipit doloribus autem, harum magni expedita sint
+        tempore quaerat rerum. Omnis voluptas eum corrupti ipsam magnam. Alias,
+        quia aspernatur!
+      </p>
+      <a href="#" class="volver">Volver</a>
+    </article>
+
+    <article id="tres">
+      <h2>Articulo TRES</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus,
+        laudantium molestias suscipit doloribus autem, harum magni expedita sint
+        tempore quaerat rerum. Omnis voluptas eum corrupti ipsam magnam. Alias,
+        quia aspernatur!
+      </p>
+      <a href="#" class="volver">Volver</a>
+    </article>
+  </body>
+</html>

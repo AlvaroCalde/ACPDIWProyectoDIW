@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PR-2-2: Selectores CSS</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 20mm 20mm 18mm;
+      position: relative;
+    }
+    .course {
+      margin: 0 0 0 37mm;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+    .course strong { font-weight: 700; margin-left: 5px; }
+    .code {
+      position: absolute;
+      top: 20mm;
+      right: 20mm;
+      width: 30mm;
+      height: 22mm;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fffed0;
+      font-size: 21px;
+      font-weight: 700;
+    }
+    .section-title {
+      margin-top: 17mm;
+      background: #3769a5;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 7px 0 7px 0;
+      width: 100%;
+    }
+    .exercise { margin-top: 28px; font-size: 16px; font-weight: 700; }
+    h1 {
+      font-size: 24px;
+      margin: 15px 0 22px 6px;
+      line-height: 1.2;
+    }
+    .examples {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 44mm;
+      align-items: start;
+      margin-left: 1.5mm;
+      position: relative;
+    }
+    .examples::after {
+      content: "";
+      position: absolute;
+      top: -9mm;
+      bottom: -4mm;
+      left: calc(50% + 22mm);
+      width: 1px;
+      background: #7fc4d8;
+    }
+    .column { min-width: 0; }
+    .demo { margin: 0 0 28px; }
+    .label { font-size: 12px; margin-bottom: 14px; white-space: nowrap; }
+    .paragraph p, .tag p, .list2 p, .list4 p {
+      margin: 0 0 12px;
+      min-height: 34px;
+      padding: 11px 2px;
+      background: #bdbdbd;
+      font-size: 12px;
+      font-weight: 400;
+    }
+    .paragraph p:first-child { background: #185a96; color: #000; }
+    .paragraph p:last-child { background: #a35a12; color: #000; }
+    .tag p:first-of-type { background: #8bd0e5; }
+    .tag p:last-of-type { background: #bdbdbd; }
+    .tag span, .list2 span, .list4 span {
+      display: block;
+      font-size: 12px;
+      margin: 0 0 14px;
+    }
+    .tag strong, .list2 strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 0;
+    }
+    .tag div, .list2 div { font-size: 12px; margin: 0 0 14px; }
+    .tag div { background: #ffff00; }
+    .list ul { margin: 0; padding-left: 28px; font-size: 12px; }
+    .list li { padding-left: 3px; min-height: 18px; }
+    .list li:nth-child(2), .list li:nth-last-child(2) { background: #ff0808; }
+    .list li:nth-child(4) { background: #c58e8e; }
+    .list2 p:nth-of-type(2) { background: #293b8d; color: #fff; }
+    .list2 strong { background: #b98200; color: #fff; width: max-content; }
+    .list3 p {
+      margin: 0;
+      padding: 14px 2px;
+      min-height: 34px;
+      background: #60ff00;
+      font-size: 12px;
+    }
+    .list4 p { margin-bottom: 12px; }
+    .list4 span { background: #ff6a52; width: max-content; }
+    @media screen {
+      body { background: #f2f2f2; }
+      .page { background: white; box-shadow: 0 0 8px #bbb; }
+    }
+    @media (max-width: 800px) {
+      .page { width: 100%; min-height: 100vh; padding: 24px; }
+      .course { margin-left: 0; }
+      .code { top: 24px; right: 24px; }
+      .section-title { margin-top: 80px; }
+      .examples { column-gap: 28px; }
+      .examples::after { left: 50%; }
+      .label { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="course">
+      <div>Ciclo: <strong>Desarrollo de Aplicaciones Web</strong></div>
+      <div>Módulo: <strong>Diseño de Interfaces Web</strong></div>
+      <div>Grupo: <strong>2º DAW</strong></div>
+    </div>
+    <div class="code">PR-2-2</div>
+
+    <div class="section-title">PR-2-2: Selectores CSS</div>
+    <div class="exercise">Ejercicio 1</div>
+    <h1>Pseudo-clases</h1>
+
+    <div class="examples">
+      <div class="column">
+        <section class="demo paragraph">
+          <div class="label">:first-child y :last-child</div>
+          <p>Paragraph 1</p>
+          <p>Paragraph 2</p>
+          <p>Paragraph 3</p>
+          <p>Paragraph 4</p>
+        </section>
+
+        <section class="demo list">
+          <div class="label">:nth-child() y :nth-last-child()</div>
+          <ul>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+            <li>Option 4</li>
+            <li>Option 5</li>
+            <li>Option 6</li>
+          </ul>
+        </section>
+
+        <section class="demo list3">
+          <div class="label">:only-child</div>
+          <p>single paragraph</p>
+        </section>
+      </div>
+
+      <div class="column">
+        <section class="demo tag">
+          <div class="label">:first-of-type y :last-of-type</div>
+          <p>Paragraph one</p>
+          <span>text in span</span>
+          <p>Paragraph two2</p>
+          <strong>Text in strong</strong>
+          <div>This is a div</div>
+          <p>Paragraph three</p>
+        </section>
+
+        <section class="demo list2">
+          <div class="label">:nth-of-type() y :nth-last-child()</div>
+          <p>Paragraph one</p>
+          <span>text in span</span>
+          <p>Paragraph two2</p>
+          <strong>Text in strong</strong>
+          <div>This is a div</div>
+          <p>Paragraph three</p>
+        </section>
+
+        <section class="demo list4">
+          <div class="label">:only-of-type()</div>
+          <p>Paragraph one</p>
+          <span>text in span</span>
+          <p>Paragraph two2</p>
+          <p>Paragraph three</p>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
