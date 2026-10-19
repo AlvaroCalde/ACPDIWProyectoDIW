@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1 - Pseudoclases y formularios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+        form {
+            width: 580px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff8b5;
+        }
+        fieldset {
+            border: 1px solid #999;
+            margin-bottom: 3px;
+            padding: 10px;
+        }
+        legend {
+            font-size: 14px;
+        }
+        /* Primer fieldset */
+        .datos {
+            background-color: #fff8b5;
+        }
+        .fila {
+            display: flex;
+            align-items: center;
+            margin-bottom: 7px;
+            min-height: 41px;
+        }
+        .fila label {
+            width: 135px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px 5px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+        }
+        input:autofocus {
+            background-color: white;
+        }
+        input:required {
+            background-color: #f4b9ca;
+        }
+        input:valid {
+            background-color: #98fbd0;
+        }
+        input:invalid {
+            background-color: #f4b9ca;
+        }
+        #nombre:focus {
+            background-color: white;
+        }
+        #apellidos:focus {
+            background-color: #f4b9ca;
+        }
+        #correo:focus {
+            outline: 2px solid #333;
+        }
+        /* Segundo fieldset */
+        .fecha-hora {
+            background-color: #fff8b5;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #cbbaf4;
+        }
+        td {
+            border: 1px solid #eee;
+            padding: 10px 7px;
+            width: 50%;
+        }
+        /* Tercer fieldset */
+        .opciones {
+            background-color: #fff8b5;
+            padding: 15px 10px;
+        }
+        .grupo {
+            margin-bottom: 20px;
+        }
+        .edad-buscar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+        }
+        input[type="number"] {
+            width: 48px;
+        }
+        input:in-range {
+            border: 1px solid #999;
+        }
+        input:out-of-range {
+            background-color: #f4b9ca;
+        }
+        input:checked {
+            accent-color: #1684ff;
+        }
+        input[type="search"] {
+            width: 150px;
+        }
+        .boton {
+            text-align: center;
+        }
+        button {
+            background-color: red;
+            color: black;
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+
+<body>
+
+<form>
+
+    <!-- DIV 1 -->
+    <div>
+        <fieldset class="datos">
+            <legend>Pseudo-clases en formularios</legend>
+
+            <div class="fila">
+                <label for="nombre">:autofocus</label>
+                <input type="text" id="nombre" name="nombre"
+                       placeholder="Nombre" autofocus>
+            </div>
+
+            <div class="fila">
+                <label for="apellidos">:required</label>
+                <input type="text" id="apellidos" name="apellidos"
+                       placeholder="Apellidos" required>
+            </div>
+
+            <div class="fila">
+                <label for="correo">:valid/:invalid</label>
+                <input type="email" id="correo" name="correo"
+                       value="mail@main.com" required>
+            </div>
+
+            <div class="fila">
+                <label for="password">Password (8 min):</label>
+                <input type="password" id="password" name="password"
+                       minlength="8" required>
+            </div>
+        </fieldset>
+    </div>
+
+    <!-- DIV 2 -->
+    <div>
+        <fieldset class="fecha-hora">
+            <legend>file, date,color, time</legend>
+
+            <table>
+                <tr>
+                    <td>
+                        Archivo a subir:<br>
+                        <input type="file" name="archivo">
+                    </td>
+                    <td>
+                        Elige color:
+                        <input type="color" name="color">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Fecha pedido
+                        <input type="date" name="fecha">
+                    </td>
+                    <td>
+                        Hora:
+                        <input type="time" name="hora">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+
+    <!-- DIV 3 -->
+    <div>
+        <fieldset class="opciones">
+            <legend>:checked , :in-range / :out-of-range</legend>
+
+            <div class="grupo">
+                Sexo:
+                <input type="radio" id="hombre" name="sexo"
+                       value="hombre">
+                <label for="hombre">Hombre</label>
+
+                <input type="radio" id="mujer" name="sexo"
+                       value="mujer" checked>
+                <label for="mujer">Mujer</label>
+            </div>
+
+            <div class="grupo">
+                Aficiones:
+                <input type="checkbox" id="musica" name="aficiones"
+                       value="musica">
+                <label for="musica">Música</label>
+
+                <input type="checkbox" id="deportes" name="aficiones"
+                       value="deportes">
+                <label for="deportes">Deportes</label>
+
+                <input type="checkbox" id="lectura" name="aficiones"
+                       value="lectura">
+                <label for="lectura">Lectura</label>
+
+                <input type="checkbox" id="cocina" name="aficiones"
+                       value="cocina">
+                <label for="cocina">Cocina</label>
+            </div>
+
+            <div class="edad-buscar">
+                <label for="edad">Edad (1-120):</label>
+                <input type="number" id="edad" name="edad"
+                       min="1" max="120" value="1">
+
+                <label for="buscar">Buscar</label>
+                <input type="search" id="buscar" name="buscar">
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="boton">
+        <button type="submit">Enviar datos</button>
+    </div>
+
+</form>
+
+</body>
+</html>
