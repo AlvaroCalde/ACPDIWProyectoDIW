@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR-2-4_2 Álvaro Calderón</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px 70px;
+            background-color: white;
+        }
+        .contenedor {
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+            margin-bottom: 80px;
+        }
+        .bloque {
+            width: 200px;
+        }
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+        input {
+            font-family: Arial, sans-serif;
+        }
+        input[list] {
+            width: 170px;
+            padding: 3px;
+        }
+        input[type="time"] {
+            width: 70px;
+        }
+        .subida {
+            margin-top: 20px;
+        }
+        .subida p {
+            margin-bottom: 15px;
+        }
+        .explicacion {
+            font-family: Georgia, serif;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .archivo {
+            margin: 15px 0;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>Usando &lt;datalist&gt; realizar:</p>
+    <div class="contenedor">
+        <div class="bloque">
+            <h2>Lenguajes de programación</h2>
+            <input type="text" list="lenguajes" name="lenguaje"
+                   id="lenguaje">
+            <datalist id="lenguajes">
+                <option value="C++">
+                <option value="Java">
+                <option value="PHP">
+                <option value="C#">
+                <option value="Javascript">
+            </datalist>
+        </div>
+        <div class="bloque">
+            <h2>HORA</h2>
+            <input type="time" list="horas" name="hora" id="hora">
+            <datalist id="horas">
+                <option value="10:00">
+                <option value="12:00">
+                <option value="14:00">
+                <option value="16:00">
+            </datalist>
+        </div>
+    </div>
+    <div class="subida">
+        <p class="explicacion">
+            atributos accept para indicar tipo de fichero y capture para
+            solo en dispositivos móviles seleccionar cámara trasera
+            (con environment) o delantera (con user)
+        </p>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="archivo">
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" name="imagen"
+                       accept="image/*" capture="environment">
+            </div>
+            <div class="archivo">
+                <label for="video">Vídeo:</label>
+                <input type="file" id="video" name="video"
+                       accept="video/*" capture="environment">
+            </div>
+            <button type="submit">upload</button>
+        </form>
+    </div>
+</body>
+</html>
