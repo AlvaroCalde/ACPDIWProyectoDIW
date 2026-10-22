@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento Relative</title>
+    <style>
+        .contenedor-gris {
+            width: 500px;
+            height: 350px;
+            background-color: grey;
+            padding: 20px;
+        }
+        .caja {
+            position: absolute;
+            color: black;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            padding: 5px 10px;
+            box-sizing: border-box;
+        }
+        /* Caja 1 - Amarilla */
+        .caja-1 {
+            background-color: yellow;
+            width: 500px;
+            height: 100px;
+            top: 210px;
+            z-index: 1;
+        }
+        /* Caja 2 - Roja */
+        .caja-2 {
+            background-color: red;
+            width: 500px;
+            height: 100px;
+            top: 70px;
+            z-index: 2;
+        }
+        /* Caja 3 - Azul */
+        .caja-3 {
+            background-color: blue;
+            width: 100px;
+            height: 300px;
+            left: 100px;
+            top: 50px;
+            z-index: 3;
+        }
+        /* Caja 4 - Verde */
+        .caja-4 {
+            background-color: green;
+            width: 100px;
+            height: 300px;
+            left: 350px;
+            top: 50px;
+            z-index: 4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-gris">
+        <div class="caja caja-1">1</div>
+        <div class="caja caja-2">2</div>
+        <div class="caja caja-3">3</div>
+        <div class="caja caja-4">4</div>
+    </div>
+
+</body>
+</html>
