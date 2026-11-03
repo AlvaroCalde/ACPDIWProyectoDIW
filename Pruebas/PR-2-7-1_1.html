@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  .contenedor-a {
+    position: relative;
+    width: 600px;
+    height: 250px;
+    font-family: sans-serif;
+  }
+  .pestanas-a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 10;
+  }
+  .pestanas-a a {
+    display: block;
+    padding: 10px 20px;
+    margin-right: 5px;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    
+  }
+  .contenido-a {
+    position: absolute;
+    top: 38px; 
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    border: 1px solid #aaa;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1; /* Nivel base */
+  }
+  #tab1{
+    background: greenyellow;
+  }
+  #tab2{
+    background: #5178e4;
+  }
+  #tab3{
+    background: pink;
+  }
+  .pestanas-a li:nth-child(1) {background: greenyellow; }
+  .pestanas-a li:nth-child(2) { background: #5178e4;} 
+  .pestanas-a li:nth-child(3) { background: pink; } 
+  /* Al hacer clic, el z-index del contenido objetivo supera a los demás */
+  .contenido-a:target {
+    z-index: 5;
+  }
+</style>
+</head>
+<body>
+  <div class="contenedor-a">
+    <ul class="pestanas-a">
+      <li><a href="#tab1">Primera</a></li>
+      <li><a href="#tab2">Segunda</a></li>
+      <li><a href="#tab3">Tercera</a></li>
+    </ul>
+    <!-- Se inicializa la primera pestaña al frente -->
+    <div id="tab1" class="contenido-a" style="z-index: 4;">Este es el contenido de la 1 PESTAÑA</div>
+    <div id="tab2" class="contenido-a">Este es el contenido de la 2 PESTAÑA</div>
+    <div id="tab3" class="contenido-a">Este es el contenido de la 3 PESTAÑA</div>
+  </div>
+</body>
+</html>

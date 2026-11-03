@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posicionamiento CSS - PR-2-5-1</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 24px;
+        background: #f3f5f6;
+        color: #111;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+      .pagina {
+        position: relative;
+        width: 100%;
+        max-width: 1100px;
+        min-width: 680px;
+        height: 760px;
+        margin: 0 auto;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid #444;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+      }
+      .cabecera {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 85px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .cabecera-bloque {
+        position: absolute;
+        top: 0;
+        height: 85px;
+        padding-top: 25px;
+        white-space: nowrap;
+      }
+      .marca {
+        left: 0;
+        width: 33.3333%;
+        background: #326b5a;
+      }
+      .buscar {
+        left: 33.3333%;
+        width: 33.3333%;
+        background: #619fa2;
+      }
+      .cuenta {
+        right: 0;
+        width: 33.3334%;
+        background: #683653;
+      }
+      .icono {
+        margin-right: 5px;
+      }
+      .lupa {
+        font-size: 23px;
+      }
+      .mano {
+        display: inline-block;
+        font-size: 19px;
+        transform: rotate(-25deg);
+      }
+      .cesta {
+        margin-left: 4px;
+      }
+      .menu {
+        position: absolute;
+        top: 85px;
+        bottom: 50px;
+        left: 0;
+        width: 20%;
+        background: #238899;
+        border-top: 3px solid #ff8c55;
+        border-right: 4px solid #ff8c55;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .menu a {
+        position: relative;
+        display: block;
+        height: 29px;
+        padding: 3px 7px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 22px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+      }
+      .menu a:hover {
+        background: #176b79;
+      }
+      .contenido {
+        position: absolute;
+        top: 85px;
+        bottom: 50px;
+        left: 20%;
+        width: 60%;
+        overflow: hidden;
+        border-top: 3px solid #ff8c55;
+        border-right: 4px solid #ff8c55;
+        border-left: 0;
+      }
+      .articulo {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+      .articulo-uno {
+        top: 0;
+        height: 25%;
+        background: #87cce5;
+      }
+      .articulo-dos {
+        top: 25%;
+        height: 37%;
+        background: #76f3cf;
+        border-top: 2px solid #ff8c55;
+        border-bottom: 2px solid #ff8c55;
+      }
+      .articulo-tres {
+        top: 62%;
+        bottom: 0;
+        background: #87cce5;
+      }
+      .articulo {
+        position: absolute;
+        margin: 0;
+      }
+      .articulo h1 {
+        top: 11px;
+        left: 12px;
+        font-size: 23px;
+      }
+      .articulo-uno .texto-uno {
+        top: 85px;
+        left: 22px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .imagen-reloj {
+        position: absolute;
+        top: 65px;
+        right: 20px;
+        width: 78px;
+        height: 78px;
+        overflow: hidden;
+        background: #e8e8e8;
+        border: 1px solid #777;
+        text-align: center;
+        font-size: 57px;
+        line-height: 76px;
+      }
+      .articulo-dos h2 {
+        top: 10px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 23px;
+      }
+      .articulo-dos h3 {
+        top: 58px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+      }
+      .texto-dos {
+        top: 154px;
+        left: 10px;
+        font-size: 16px;
+      }
+      .imagen-portatil {
+        position: absolute;
+        top: 104px;
+        right: 18px;
+        width: 76px;
+        height: 76px;
+        overflow: hidden;
+        background: #d9e8e6;
+        text-align: center;
+        font-size: 42px;
+        line-height: 72px;
+      }
+      .imagen-portatil span {
+        position: absolute;
+        right: 1px;
+        bottom: 0;
+        font-size: 20px;
+        line-height: 25px;
+      }
+      .etiqueta-links {
+        right: 32px;
+        bottom: 19px;
+        font-size: 16px;
+      }
+      .articulo-tres h2 {
+        top: 10px;
+        left: 12px;
+        font-size: 23px;
+      }
+      .articulo-tres .texto-tres {
+        top: 85px;
+        left: 22px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .imagen-tres {
+        top: 64px;
+      }
+      .barra-enlaces {
+        position: absolute;
+        top: 85px;
+        right: 0;
+        bottom: 50px;
+        width: 20%;
+        padding: 8px 7px;
+        background: #ff450b;
+        border-top: 3px solid #ff8c55;
+        border-left: 3px solid #ff8c55;
+        color: #fff;
+        font-size: 15px;
+        line-height: 19px;
+      }
+      .barra-enlaces p {
+        position: relative;
+        margin: 0;
+      }
+      .lista-enlaces {
+        margin-top: 2px !important;
+      }
+      .barra-enlaces a {
+        color: #244eaf;
+      }
+      .pie {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 50px;
+        padding-top: 9px;
+        background: #c8ed17;
+        border-top: 3px solid #ff8c55;
+        text-align: center;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="pagina">
+      <header class="cabecera">
+        <div class="cabecera-bloque marca">
+          <span class="icono">🏬</span><span>Logo empresa</span
+          ><span class="mano">☝</span>
+        </div>
+        <div class="cabecera-bloque buscar">
+          <span class="icono lupa">🔎</span><span>Buscar</span>
+        </div>
+        <div class="cabecera-bloque cuenta">
+          <span>♟ Cuenta,</span><span class="cesta">🛒 cesta</span>
+        </div>
+      </header>
+
+      <nav class="menu" aria-label="Menú principal">
+        <a href="#articulo-1">opcion 1</a>
+        <a href="#articulo-2">opcion 2</a>
+        <a href="#articulo-3">opcion 3</a>
+        <a href="#enlaces">opcion 4</a>
+      </nav>
+
+      <section class="contenido" aria-label="Artículos">
+        <article class="articulo articulo-uno" id="articulo-1">
+          <h1>Mi Articulo 1</h1>
+          <p class="texto-uno">
+            Lorem ipsum dolor sit amet<br />consecteturpariatur.
+          </p>
+          <div class="imagen-reloj" role="img" aria-label="Reloj">🕰️</div>
+        </article>
+
+        <article class="articulo articulo-dos" id="articulo-2">
+          <h2>Mi Articulo &lt; 2 &gt;</h2>
+          <h3>Subtitulo 2 articulo</h3>
+          <p class="texto-dos">Contenido del article 2</p>
+          <div
+            class="imagen-portatil"
+            role="img"
+            aria-label="Ordenador portátil y teléfono"
+          >
+            💻<span>📱</span>
+          </div>
+          <strong class="etiqueta-links">Links</strong>
+        </article>
+
+        <article class="articulo articulo-tres" id="articulo-3">
+          <h2>Mi Articulo 3</h2>
+          <p class="texto-tres">
+            Lorem ipsum dolor sit amet<br />consecteturpariatur.
+          </p>
+          <div
+            class="imagen-portatil imagen-tres"
+            role="img"
+            aria-label="Ordenador portátil y teléfono"
+          >
+            💻<span>📱</span>
+          </div>
+        </article>
+      </section>
+
+      <aside class="barra-enlaces" id="enlaces">
+        <p>Aqui tenemos nuestra<br />seccion de links<br />interesantes</p>
+        <p class="lista-enlaces">
+          <a href="#articulo-1">Link 1</a> <a href="#articulo-2">Link 2</a> ...
+        </p>
+      </aside>
+
+      <footer class="pie">Diseño de Interfaces web</footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PR-2-6: Modelo de cajas z-index</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Comic Sans MS", "Comic Neue", sans-serif;
+    }
+    .contenedor {
+      position: relative;
+      width: 330px;
+      height: 292px;
+    }
+    .caja {
+      position: absolute;
+      font-family: "Times New Roman", serif;
+      font-size: 32px;
+      padding: 4px 8px;
+      box-sizing: border-box;
+    }
+    .c5 { background: #06d6a0; left: 0;     top: 0;     width: 174px; height: 185px; z-index: 1; }
+    .c1 { background: #ef476f; left: 154px; top: 2px;   width: 176px; height: 185px; z-index: 2; text-align: right; }
+    .c4 { background: #8b5fd6; left: 0;     top: 106px; width: 154px; height: 186px; z-index: 2; }
+    .c3 { background: #118ab2; left: 154px; top: 187px; width: 176px; height: 105px; z-index: 2; }
+    .c2 { background: #ffd166; left: 88px;  top: 71px;  width: 121px; height: 128px; z-index: 3; text-align: center; padding-top: 20px; }
+    .caja:hover {
+      z-index: 10;
+    }
+    .c5:hover {
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="caja c5">5</div>
+    <div class="caja c1">1</div>
+    <div class="caja c4">4</div>
+    <div class="caja c3"></div>
+    <div class="caja c2">2</div>
+  </div>
+</body>
+</html>
