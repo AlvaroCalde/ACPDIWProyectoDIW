@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acordeón con :target</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 35px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #222;
+      }
+      .contenedor {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      h2 {
+        font-size: 22px;
+        margin-bottom: 18px;
+      }
+      .acordeon {
+        width: 100%;
+      }
+      .item {
+        margin: 0;
+      }
+      .titulo {
+        display: block;
+        padding: 12px 15px;
+        background: #ddd;
+        border-bottom: 1px solid #c9c9c9;
+        color: #337ab7;
+        font-size: 13px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .titulo:hover {
+        background: #d2d2d2;
+      }
+      /* El contenido se oculta hasta que su enlace lo convierte en :target */
+      .contenido {
+        display: none;
+        padding: 0 15px;
+        background: #fff;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      .contenido:target {
+        display: block;
+        padding: 10px 15px;
+        background: #f7f7f7;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="contenedor">
+      <h2>Acordeón con :target</h2>
+
+      <section class="acordeon">
+        <article class="item">
+          <a class="titulo" href="#contenido1">Título 1</a>
+          <div class="contenido" id="contenido1">
+            <p>
+              T1 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Eveniet dolores dolor deleniti? Minus nobis, placeat iusto est
+              voluptatem tempora ut iste accusamus nihil obcaecati eos amet
+              accusantium sequi assumenda corrupti.
+            </p>
+          </div>
+        </article>
+
+        <article class="item">
+          <a class="titulo" href="#contenido2">Título 2</a>
+          <div class="contenido" id="contenido2">
+            <p>
+              T2 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Eveniet dolores dolor deleniti? Minus nobis, placeat iusto est
+              voluptatem tempora ut iste accusamus nihil obcaecati eos amet
+              accusantium sequi assumenda corrupti.
+            </p>
+          </div>
+        </article>
+
+        <article class="item">
+          <a class="titulo" href="#contenido3">Título 3</a>
+          <div class="contenido" id="contenido3">
+            <p>
+              T3 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Eveniet dolores dolor deleniti? Minus nobis, placeat iusto est
+              voluptatem tempora ut iste accusamus nihil obcaecati eos amet
+              accusantium sequi assumenda corrupti.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PR-2-7-1 - Ejercicio b: pestañas con radio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 36px 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+      background: #fff;
+    }
+    main {
+      width: min(100%, 625px);
+      margin: 0 auto;
+    }
+    .grupo-radio {
+      position: relative;
+      width: 100%;
+    }
+    .grupo-radio input[type="radio"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .etiquetas-radio {
+      display: flex;
+      align-items: flex-end;
+      gap: 17px;
+      padding-left: 7px;
+    }
+    .etiquetas-radio label {
+      display: inline-flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      min-height: 49px;
+      padding: 12px 9px;
+      border-radius: 7px 7px 0 0;
+      background: #6879bd;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    #radio-1:checked ~ .etiquetas-radio label[for="radio-1"],
+    #radio-2:checked ~ .etiquetas-radio label[for="radio-2"],
+    #radio-3:checked ~ .etiquetas-radio label[for="radio-3"],
+    #radio-4:checked ~ .etiquetas-radio label[for="radio-4"],
+    #radio-5:checked ~ .etiquetas-radio label[for="radio-5"] {
+      background: #79c8f1;
+    }
+    #radio-1:focus-visible ~ .etiquetas-radio label[for="radio-1"],
+    #radio-2:focus-visible ~ .etiquetas-radio label[for="radio-2"],
+    #radio-3:focus-visible ~ .etiquetas-radio label[for="radio-3"],
+    #radio-4:focus-visible ~ .etiquetas-radio label[for="radio-4"],
+    #radio-5:focus-visible ~ .etiquetas-radio label[for="radio-5"] {
+      outline: 3px solid #222;
+      outline-offset: 2px;
+    }
+    .paneles-radio {
+      min-height: 340px;
+      padding: 16px;
+      background: #efd4b7;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .contenido-radio {
+      display: none;
+    }
+    #radio-1:checked ~ .paneles-radio #contenido-radio-1,
+    #radio-2:checked ~ .paneles-radio #contenido-radio-2,
+    #radio-3:checked ~ .paneles-radio #contenido-radio-3,
+    #radio-4:checked ~ .paneles-radio #contenido-radio-4,
+    #radio-5:checked ~ .paneles-radio #contenido-radio-5 {
+      display: block;
+    }
+    @media (max-width: 560px) {
+      body {
+        padding: 24px 12px;
+      }
+      .etiquetas-radio {
+        gap: 6px;
+        padding-left: 0;
+      }
+      .etiquetas-radio label {
+        min-height: 44px;
+        padding: 9px 3px;
+        font-size: 13px;
+      }
+      .paneles-radio {
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <div class="grupo-radio">
+      <input type="radio" name="pestana" id="radio-1">
+      <input type="radio" name="pestana" id="radio-2">
+      <input type="radio" name="pestana" id="radio-3" checked>
+      <input type="radio" name="pestana" id="radio-4">
+      <input type="radio" name="pestana" id="radio-5">
+
+      <div class="etiquetas-radio">
+        <label for="radio-1">Radio 1</label>
+        <label for="radio-2">Radio 2</label>
+        <label for="radio-3">Radio 3</label>
+        <label for="radio-4">Radio 4</label>
+        <label for="radio-5">Radio 5</label>
+      </div>
+
+      <div class="paneles-radio">
+        <section class="contenido-radio" id="contenido-radio-1">
+          Este es el contenido del RADIO 1
+        </section>
+        <section class="contenido-radio" id="contenido-radio-2">
+          Este es el contenido del RADIO 2
+        </section>
+        <section class="contenido-radio" id="contenido-radio-3">
+          Este es el contenido del RADIO 3
+        </section>
+        <section class="contenido-radio" id="contenido-radio-4">
+          Este es el contenido del RADIO 4
+        </section>
+        <section class="contenido-radio" id="contenido-radio-5">
+          Este es el contenido del RADIO 5
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

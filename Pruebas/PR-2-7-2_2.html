@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ventana modal con :checked</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 35px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #222;
+      }
+      .caja {
+        width: min(445px, 100%);
+        border: 1px solid #222;
+        padding: 15px 6px 28px;
+      }
+      .caja > h2 {
+        font-size: 20px;
+        margin: 0 0 20px;
+      }
+      .control {
+        /* Los radio buttons controlan el estado, pero no se ven */
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .boton {
+        display: inline-block;
+        padding: 12px 14px;
+        background: #008b87;
+        color: white;
+        border-radius: 3px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .boton:hover {
+        background: #00736f;
+      }
+      /* Fondo y modal ocultos por defecto */
+      .fondo-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .modal {
+        position: relative;
+        width: min(480px, 100%);
+        padding: 28px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      }
+      .modal h2 {
+        margin-top: 0;
+      }
+      .cerrar {
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        font-size: 28px;
+        cursor: pointer;
+      }
+      /* Al seleccionar el radio abrir, aparece el modal */
+      #abrir:checked ~ .fondo-modal {
+        display: flex;
+      }
+      /* Cierre con el radio cerrar (comparten name) */
+      #cerrar:checked ~ .fondo-modal {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="caja">
+      <h2>Ventana modal con :checked y radio buttons</h2>
+
+      <!-- Radio marcado = modal abierto -->
+      <input type="radio" name="modal" id="abrir" class="control" />
+      <input type="radio" name="modal" id="cerrar" class="control" checked />
+
+      <label for="abrir" class="boton">MOSTRAR MODAL</label>
+
+      <div class="fondo-modal">
+        <div class="modal">
+          <label for="cerrar" class="cerrar" aria-label="Cerrar modal"
+            >&times;</label
+          >
+          <h2>Ventana modal</h2>
+          <p>Este es el contenido de la ventana modal.</p>
+          <p>
+            Se muestra y se oculta únicamente con CSS usando :checked y radio
+            buttons.
+          </p>
+          <label for="cerrar" class="boton">CERRAR</label>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
