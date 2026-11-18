@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo 2 - Before y After</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 100px;
+      }
+      .contenedor {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 100px;
+      }
+      
+      /* La clase base .caja establece el contexto de posición para ambas cajas.
+         Todo lo que tenga position: absolute dentro de ellas, se moverá
+         tomando estas cajas como mapa de coordenadas. */
+      .caja {
+        position: relative;
+        z-index: 1;
+      }
+      
+      .caja1 {
+        width: 260px;
+        height: 140px;
+        background-color: #dc9e42;
+        border-radius: 15px;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      /* ==========================================
+         CAJA 1 - TRIÁNGULO SUPERIOR (::before)
+         ========================================== */
+      .caja1::before {
+        /* Obligatorio para que se renderice en pantalla */
+        content: "";
+        position: absolute;
+        
+        /* Lo subimos 35px (exactamente la altura del triángulo) para que 
+           quede por fuera de la caja superiormente */
+        top: -35px;
+        
+        /* Estas dos propiedades centran el triángulo horizontalmente a la perfección */
+        left: 50%;
+        transform: translateX(-50%);
+        
+        /* TRUCO DEL TRIÁNGULO CSS (Apunta hacia arriba):
+           Se hacen los bordes laterales transparentes y se le da color solo 
+           al borde inferior. Al cruzarse los bordes, forman un triángulo. */
+        border-left: 35px solid transparent;
+        border-right: 35px solid transparent;
+        border-bottom: 35px solid #f07870; /* Base del triángulo */
+        
+        /* Lo enviamos atrás para que su base quede oculta tras la caja 
+           y parezca una pestaña adherida */
+        z-index: -1;
+      }
+
+      /* ==========================================
+         CAJA 1 - TRIÁNGULO INFERIOR (::after)
+         ========================================== */
+      .caja1::after {
+        content: "";
+        position: absolute;
+        
+        /* Lo bajamos 18px (su altura) para que sobresalga por debajo */
+        bottom: -18px;
+        
+        /* En este caso no va centrado, sino a un 10% del borde izquierdo */
+        left: 10%;
+        
+        /* TRUCO DEL TRIÁNGULO CSS (Apunta hacia abajo):
+           Bordes laterales transparentes y color solo en el borde SUPERIOR */
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+        border-top: 18px solid #7554c7;
+        
+        z-index: -1;
+      }
+      
+      .caja1 h3 {
+        margin: 5px;
+      }
+      .caja1 p {
+        font-size: 13px;
+        margin: 5px;
+      }
+      .caja1 img {
+        width: 70px;
+        height: 65px;
+        object-fit: cover;
+        margin-top: 5px;
+      }
+      
+      .caja2 {
+        width: 300px;
+        height: 60px;
+        background-color: #444444;
+        border-radius: 5px;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        box-sizing: border-box;
+      }
+      .caja2 h3 {
+        font-family: Georgia, serif;
+        font-size: 20px;
+      }
+      
+
+      /* ==========================================
+         CAJA 2 - TRIÁNGULO SUPERIOR (::before)
+         ========================================== */
+      .caja2::before {
+        content: "";
+        position: absolute;
+        
+        /* Sube 22px fuera de la caja */
+        top: -22px;
+        
+        /* Se coloca en el lado derecho, al 75% del ancho de la caja */
+        left: 75%;
+        
+        /* Triángulo apuntando hacia arriba, de color azul puro */
+        border-left: 22px solid transparent;
+        border-right: 22px solid transparent;
+        border-bottom: 22px solid blue;
+        
+        z-index: -1;
+      }
+
+      /* ==========================================
+         CAJA 2 - TRIÁNGULO INFERIOR (::after)
+         ========================================== */
+      .caja2::after {
+        content: "";
+        position: absolute;
+        
+        /* Baja 22px fuera de la caja */
+        bottom: -22px;
+        
+        /* Se coloca en el lado izquierdo, al 15% del ancho */
+        left: 15%;
+        
+        /* Triángulo apuntando hacia abajo, de color azul claro/celeste */
+        border-left: 22px solid transparent;
+        border-right: 22px solid transparent;
+        border-top: 22px solid #2675b9;
+        
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejemplo 2. Cajas con triángulos de señalización</h1>
+
+    <div class="contenedor">
+      <!-- Primera caja -->
+      <div class="caja caja1">
+        <h3>Caja</h3>
+        <p>Parrafo 1</p>
+        <img src="https://picsum.photos/id/100/100" alt="Imagen" />
+      </div>
+
+      <!-- Segunda caja -->
+      <div class="caja caja2">
+        <h3>A</h3>
+      </div>
+    </div>
+  </body>
+</html>

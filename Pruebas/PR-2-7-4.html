@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pr-2-7-4</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: white;
+      }
+
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .bola {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: blue;
+      }
+
+      /* color degradado  */
+      .bola::before {
+        /* Obligatorio: sin 'content' el pseudoelemento no existe */
+        content: ""; 
+        
+        /* Se posiciona sobre la bola base y adopta su mismo tamaño exacto */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+
+        /* Magia 3D: Este degradado descentrado (at 25% 20%) simula un "foco de luz" 
+           arriba a la izquierda, creando la ilusión de volumen esférico */
+        background: radial-gradient(
+          circle at 25% 20%,
+          yellow,
+          #baba4b 30%,
+          #6666a0 58%,
+          blue
+        );
+
+        /* Asegura que esta capa de textura quede por encima de la bola base */
+        z-index: 1;
+      }
+
+      .bola::after {
+        /* Obligatorio: creamos la segunda capa invisible */
+        content: ""; 
+        
+        /* Posicionamiento absoluto para moverla independientemente */
+        position: absolute;
+        
+        /* Le damos forma de óvalo aplastado */
+        width: 145px;
+        height: 18px;
+        
+        /* La desplazamos hacia abajo y a la derecha, en dirección opuesta 
+           al foco de luz del ::before */
+        left: 65px;
+        bottom: -12px;
+        border-radius: 50%;
+        background: blue;
+        
+        /* El toque realista: difumina los bordes sólidos convirtiéndolo en sombra */
+        filter: blur(5px);
+        
+        /*un z-index negativo empuja esta sombra POR DETRÁS 
+           de la bola, para que parezca que está apoyada en el suelo */
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="bola"></div>
+    </div>
+  </body>
+</html>

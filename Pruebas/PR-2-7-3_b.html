@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2-7-3_b Amazon</title>
+    <style>
+        * {
+            box-sizing: border-box; font-family: sans-serif;
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+ 
+        body{
+          margin:0;
+        }
+ 
+        img{
+          width: 100vw;
+        }
+ 
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            overflow: hidden;
+            background-image: url(./images/fondoAmazon.png);
+        }
+ 
+        header {
+            position: relative;
+            width: 100%;
+            height: 72px;
+            background:#232f3e;
+           
+            input{
+                display: none;
+ 
+                &:checked ~ nav{
+                    left: 0;
+                }
+ 
+                &:checked ~ .lblClose{
+                   /* right: 0; */
+                   /* left:320px; */
+                   opacity: 1;
+                }
+ 
+            }
+ 
+            .header1{
+                position: relative;top: 0;
+                width: 100vw;
+                & img{
+                    display: block;
+                    width: 100vw;height: 74px;
+                }
+            }
+ 
+            .header2{
+                width: 100vw;height: 52px;
+                position: absolute;
+                top: 52px;
+                background-color: #232f3e;
+            }
+ 
+            & .lblHbger {
+                position: absolute;
+                top: 52px;left: 0px;
+                display: block;
+                width: 104px;
+                height: 48px;
+                background:#232f3e;
+                color: white;
+                padding-top: 10px;
+                border-radius: 3px;
+                z-index: 2;
+                &:hover{border: 2px solid white;}
+                cursor: pointer;
+ 
+                & span {
+                    display: block;
+                    width: 44px;
+                    height: 5px;
+                    background: white;
+                    margin-left: 5px;
+                    box-shadow: 0px 11px 0px white,
+                        0px 22px 0px white;
+                }
+                strong{
+                    display: inline-block;
+                    position: relative;
+                    left: 55px;
+                       
+ 
+                }
+ 
+            }  /*hbger  */
+ 
+            nav{
+                position: absolute;
+                top:0 ;
+                width: 320px;
+                height: 100vh;
+                background:#ffffff;
+                overflow-y: auto;
+                left: -100%;
+                z-index: 10;
+                transition: left 0.2s cubic-bezier(1, 0, 0, 1) ;
+                a{
+                    display: block;
+                    width: 100%;height: 40px;    
+                    color: #8a8a8a;
+                    text-decoration: none;
+                    padding-left: 10px;
+                    line-height: 40px;
+                    &:hover{background: #eee;}
+                    &:nth-of-type(1){
+                      background: #232f3e;
+                      color:white;
+                    }
+                }
+                span{
+                    display: block;width: 100%;
+                    padding: 10px;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    border-top: 1px solid #bbb;
+                }  
+            }/* nav */
+ 
+            .lblClose{
+              display: block;
+              position: absolute;
+              top: 0;left: 0px;
+              background: #00000079;
+              width: 100vw;
+              height: 100vh;
+              opacity: 0;
+              z-index: 1;
+              transition: all 0.3s ease;
+            }
+ 
+            #closeNav:checked ~ nav{
+                left:-320px
+            }
+ 
+            #closeNav:checked ~ .lblClose{
+                /* right:-100%; */
+                /* left:-100%; */
+                opacity: 0;
+            }
+ 
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="container">
+        <header>    
+            <div class="header1">
+                <img src="./images/barraAmazon.png" alt="">
+            </div>        
+ 
+            <div class="header2"></div>
+ 
+            <input type="radio" name="rd" id="openNav">  
+            <input type="radio" name="rd" id="closeNav">        
+            <label for="openNav" class="lblHbger">
+                <span></span>
+                <strong>Todo</strong>
+            </label>
+ 
+            <nav>                
+                <a>&#128100; &nbsp; Hola, identificate</a>
+                <span>Tendencias</span>
+                <a href="#">Los más vendidos</a>
+                <a href="#"> Vender en Amazon</a>
+                <span >Dispositivos y contenido de Amazon</span>
+                <a href="#">Hola, identificate</a>
+                <a href="#">Tendencias</a>
+                <a href="#">Los más vendidos</a>
+                <a href="#"> Vender en Amazon</a>
+                <a href="#">Los más vendidos</a>
+                <a href="#"> Vender en Amazon</a>
+                <a href="#">Los más vendidos</a>
+                <a href="#"> Vender en Amazon</a>
+                 <span >Buscar por departamento</span>
+                <a href="#"> Libros</a>
+                <a href="#"> Cine, TV y Música </a>
+                <a href="#"> Cine, TV y Música </a>
+                <a href="#"> Libros</a>
+                <a href="#"> Cine, TV y Música </a>
+                <a href="#"> Cine, TV y Música </a>
+                <a href="#"> Libros</a>
+                <a href="#"> Cine, TV y Música </a>
+                <a href="#"> Cine, TV y Música </a>
+                <a href="#"> Libros</a>
+                <a href="#"> Cine, TV y Música </a>
+                <a href="#"> Cine, TV y Música </a>
+ 
+            </nav>
+            <label for="closeNav" class="lblClose"></label>
+ 
+        </header>
+ 
+    </div>
+</body>
+ 
+</html>
